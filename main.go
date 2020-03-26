@@ -40,10 +40,12 @@ func newCard() string { // Breaking down of the syntax, check point 4 below
 //    }
 //    newCard there helps define a function called 'newCard'
 //    string there tells go that when executed, this function will return a value of type 'string'
+//
 // 5. Basic data structures in Go for handling lists of records
 //    - Array: Fixed length list of things
 //    - Slice: An array that can grow or shrink
 //    Slices and arrays both must be defined with a data type. Every single record inside of it must be of an identical type
+//
 // 6. for i, card := range cards {
 //       fmt.Println(i, card)
 //    }
@@ -54,6 +56,19 @@ func newCard() string { // Breaking down of the syntax, check point 4 below
 //    We use our colon equals syntax to assign the index and the value for every element inside the slice to the variables of i and card
 //    Well with for loops every single time that we step through this list of cards we're really throwing away the previous index and the previous card that had been declared.
 //    And so that's why we are re-declaring or re-initializing the variables in card here by using the colon equals syntax
+//
+// 7. Go is not a OOP language. So there's no idea of classes inside of Go
+//    - Taking a look at how we would approach the Cards Project with something like Python, Ruby or Java, we'll have something like:
+//    A Deck Class, and for each Deck Instance that has a property of cards (an array of string), followed by a few methods, namely the print, shuffle and saveToFile functions to manipulate that list of carts that are attached to the deck instance
+//	  - But for Go, we're going to approach in the way like:
+//    Using Base Go Types e.g. string, integer, float, array, map, to "extend" a base type and add some extra functionality to it
+//    We're going to define a new type inside of Go with `type deck []string`. That will tell Go that we want to create a slice of strings and add a bunch of functions specifically made to work with it
+//    Those functions with 'deck' as a 'receiver' is like a method - a function that belongs to an "instance"
+//    - The project structure we're going for our Cards Project would be:
+//    Have a 'cards' folder containing 3 files,
+//    1. main.go - comprises of code to create and manipulate a deck
+//    2. deck.go - comprises code that describes what a deck is and how it works
+//    3. deck_test.go - comprises code to automatically test the deck
 
 // Quiz 2: Test Your Knowledge: Variable Assignment
 // 1. Is the following a valid way of initializing and assigning a value to a variable? Yes
