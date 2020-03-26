@@ -94,3 +94,46 @@ func newCard() string { // Breaking down of the syntax, check point 4 below
  		deckSize = 52
   		fmt.Println(deckSize)
 	} */
+
+// Quiz 3: Test Your Knowledge: Functions
+// 1. If a function returns a value, do we have to annotate, or mark, the function with the type of value that is being returned? Yes, every function that returns a value must indicate what type of value it is returning
+// 2. The Go compiler is presenting an error message about the following function.  What should we do to fix the error? Add a return type of 'string' to the function, like "func getSize() string {"
+/* 	func getSize() {
+    	return "30 meters"
+	} */
+// 3. Is the following function valid? Yes
+/* 	func estimatePi() float64 {
+    	return 3.14
+	} */
+// 4. Is the following code valid? Why or why not? Yes, it is valid
+/* 	package main
+
+	import "fmt"
+
+	func main() {
+    	fmt.Println(getTitle())
+	}
+
+	func getTitle() string {
+    	return "Harry Potter"
+	} */
+// 5. Here's a tough one!
+// Imagine we have two files in the same folder with the same package name.
+// This might take a little experimentation on your side.
+// If you do try this out yourself, run your code with the command go run main.go state.go
+// Will the following code successfully compile? Yes, because both files are part of the same package. Files in the same package can freely call functions defined in other files
+/* 	In main.go:
+	package main
+
+	func main() {
+    	printState()
+	}
+
+	In a separate file called state.go:
+	package main
+
+	import "fmt"
+
+	func printState() {
+    	fmt.Println("California")
+	} */
