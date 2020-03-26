@@ -6,9 +6,12 @@ func main() {
 	// var card string = "Ace of Spades" // Breaking down of the syntax, check point 1 below
 	// card := "Ace of Spades" // This is the 100% equivalent of the code right above. Here we rely upon the compiler to infer that card is supposed to contain a string
 	// card = "Five of Diamonds" // Important note on point 3 below
-	card := newCard()
+	cards := []string{"Ace of Diamonds", newCard()}
+	cards = append(cards, "Six of Spades") // append function does not modify the existing slice. Instead it returns a new slice that we then assign back to a variable of cards
 
-	fmt.Println(card)
+	for i, card := range cards { // Breaking down of the syntax, check point 6 below
+		fmt.Println(i, card)
+	}
 }
 
 func newCard() string { // Breaking down of the syntax, check point 4 below
@@ -37,6 +40,20 @@ func newCard() string { // Breaking down of the syntax, check point 4 below
 //    }
 //    newCard there helps define a function called 'newCard'
 //    string there tells go that when executed, this function will return a value of type 'string'
+// 5. Basic data structures in Go for handling lists of records
+//    - Array: Fixed length list of things
+//    - Slice: An array that can grow or shrink
+//    Slices and arrays both must be defined with a data type. Every single record inside of it must be of an identical type
+// 6. for i, card := range cards {
+//       fmt.Println(i, card)
+//    }
+//    i is our index of this element in the array. i is short of index
+//    card is the current card we're iterating over
+//    range cards means to take the slice of 'cards' and loop over it
+//    fmt.Println(i, card) within the for loop body basically means to run this line of code one time for each card in the slice
+//    We use our colon equals syntax to assign the index and the value for every element inside the slice to the variables of i and card
+//    Well with for loops every single time that we step through this list of cards we're really throwing away the previous index and the previous card that had been declared.
+//    And so that's why we are re-declaring or re-initializing the variables in card here by using the colon equals syntax
 
 // Quiz 2: Test Your Knowledge: Variable Assignment
 // 1. Is the following a valid way of initializing and assigning a value to a variable? Yes
