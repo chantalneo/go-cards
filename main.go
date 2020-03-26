@@ -154,3 +154,18 @@ func newCard() string { // Breaking down of the syntax, check point 4 below
 	func printState() {
     	fmt.Println("California")
 	} */
+
+// Quiz 4: Test Your Knowledge: Slices and For Loops
+// 1. Which of the following represents a slice where each element in it is of type int? []int{}
+// 2. Is the following code valid? No, because "strings" is not a valid type
+// colors := []strings{"Red", "Yellow", "Blue"}
+// 3. How do we iterate through each element in a slice and print out its value? (Will answer in next line)
+// colors := []string{"Red", "Yellow", "Blue"}
+// for index, color := range colors {
+//    fmt.Println(index, color)
+// }
+// 4. Would the following code compile successfully? No, because every variable we declare must be used in our code. In this case, 'index' is not being used
+/* 	for index, card := range cards {
+    	fmt.Println(card)
+	} */
+// 5. Can a slice have both values of type 'int' and of type 'string' in it? No, because a slice can only have one type of value in it
