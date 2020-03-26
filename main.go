@@ -1,17 +1,16 @@
 package main
 
-import "fmt"
-
 func main() {
 	// var card string = "Ace of Spades" // Breaking down of the syntax, check point 1 below
 	// card := "Ace of Spades" // This is the 100% equivalent of the code right above. Here we rely upon the compiler to infer that card is supposed to contain a string
 	// card = "Five of Diamonds" // Important note on point 3 below
-	cards := []string{"Ace of Diamonds", newCard()}
+	cards := deck{"Ace of Diamonds", newCard()}
 	cards = append(cards, "Six of Spades") // append function does not modify the existing slice. Instead it returns a new slice that we then assign back to a variable of cards
 
-	for i, card := range cards { // Breaking down of the syntax, check point 6 below
-		fmt.Println(i, card)
-	}
+	// for i, card := range cards { // Breaking down of the syntax, check point 6 below
+	// 	fmt.Println(i, card)
+	// }
+	cards.print()
 }
 
 func newCard() string { // Breaking down of the syntax, check point 4 below
