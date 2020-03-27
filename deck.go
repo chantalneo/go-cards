@@ -35,6 +35,9 @@ func deal(d deck, handSize int) (deck, deck) {
 // 1. (d deck) within syntax... the d is the actual copy of the deck we're working with is available in the function as a variable called 'd'
 //    the deck there basically means every variable of type 'deck' can call this function on itself
 //    We used d because by convention we usually refer to the receiver with a one or 2 letter abbreviation that matches the type of the receiver. In other OOP, we could see d as self/this
+//
+// 2. Byte slice is like an array where every element inside of it corresponds to an ASCII character code. String "Hi there!" would be [72 105 32 116 104 101 114 101 33] in byte slice
+// To do conversion, we can refer to the Dec column of http://www.asciitable.com/
 
 // Quiz 5: Test Your Knowledge: Functions with Receivers
 // 1. What would the following code print out? "Harry Potter"
