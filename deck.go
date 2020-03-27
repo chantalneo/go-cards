@@ -14,7 +14,7 @@ func newDeck() deck {
 
 	for _, suit := range cardSuits {
 		for _, value := range cardValues {
-			cards = append(cards, value+" of "+suit)
+			cards = append(cards, value+" of "+suit) // append function does not modify the existing slice. Instead it returns a new slice that we then assign back to a variable of cards
 		}
 	}
 
@@ -48,17 +48,28 @@ func (d deck) print() { // (d deck) here in the syntax is what we refer to as a 
     	var b book = "Harry Potter"
     	b.printTitle()
 	} */
+//
 // 2. Complete the sentence! By creating a new type with a function that has a receiver, we... Are adding a 'method' to any value of that type
+//
 // 3. In the following snippet, what does the variable 'ls' represent? A value of laptopSize
 /* 	type laptopSize float
 
 	func (ls laptopSize) getSizeOfLaptop() {
     	return ls
 	} */
+//
 // 4. Is the following code valid? Yes, but it is breaking convention, Go avoids any mention of 'this' or 'self'. While the code is technically valid and will compile, we don't ever reference a receiver value as 'this' or 'self'
 /* 	type laptopSize float64
 
 	func (this laptopSize) getSizeOfLaptop() laptopSize {
     	return this
 	} */
+//
 // 5. In the for loops, we replaced i and j with underscores to tell Go that we understand that there are variables there but we just don't care about it and we don't want to use it. Thus, getting rid of errors
+//
+// 6. Slices are zero-indexed. Go has a little helper built in to the basic syntax of the language to help us select slices. The syntax is as follows:
+// - cards[startIndexIncluding : upToNotIncluding]
+//   At such if we call cards[0:2], we get a slice of cards containing cards[0] and cards[1] only
+// - We can optionally leave off the numbers on either side of the colon to have go automatically infer that we want to start from the beginning or go all the way to the end of a slice
+//   At such cards[:2] is as good as cards[0:2]
+//   And if I use [2:], it means I'll take cards from cards[2] to the end of the cards slice
