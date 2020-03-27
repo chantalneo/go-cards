@@ -77,3 +77,68 @@ func deal(d deck, handSize int) (deck, deck) {
 // - We can optionally leave off the numbers on either side of the colon to have go automatically infer that we want to start from the beginning or go all the way to the end of a slice
 //   At such cards[:2] is as good as cards[0:2]
 //   And if I use [2:], it means I'll take cards from cards[2] to the end of the cards slice
+
+// Quiz 6: Test Your Knowledge: Multiple Return Values
+// 1. In the following code snippet, what will the value and type of 'title' and 'pages' be? Title will be string with value of "War and Peace". Pages will be int with value of 1000
+/* 	func getBookInfo() (string, int) {
+    	return "War and Peace", 1000
+	}
+
+	title, pages := getBookInfo() */
+// 2. What will the following program log out? "red" "yellow" "blue". Note: We aren't limited to only two return values at a time
+/* 	package main
+
+	import "fmt"
+
+	func main() {
+    	color1, color2, color3 := colors()
+
+    	fmt.Println(color1, color2, color3)
+	}
+
+	func colors() (string, string, string) {
+    	return "red", "yellow", "blue"
+	} */
+// 3. What will the following program log out? "Red is an awesome color"
+/* 	package main
+
+	import "fmt"
+
+	func main() {
+   		c := color("Red")
+
+   		fmt.Println(c.describe("is an awesome color"))
+	}
+
+	type color string
+
+	func (c color) describe(description string) (string) {
+   		return string(c) + " " + description
+	} */
+// 4. Which of the following best explains the describe function listed below? 'describe' is a function with a receiver of type 'color that requires an argument of type 'string', then returns a value of type 'string'
+/* 	package main
+
+	import "fmt"
+
+	func main() {
+   		c := color("Red")
+
+   		fmt.Println(c.describe("is an awesome color"))
+	}
+
+	type color string
+
+	func (c color) describe(description string) (string) {
+   		return string(c) + " " + description
+	} */
+// 5. This is a tricky question about something that we'll cover in much greater detail later on. Think back to our current "cards" program, where we have the following code
+// After calling "deal" and passing in "cards", does the list of strings that the "cards" variable point at change?
+// In other words, did we modify the 'cards' slice by calling 'deal'? No, 'cards' will be the same before and after calling 'deal'
+/* 	func main() {
+    	cards := newDeck()
+
+    	hand, remainingCards := deal(cards, 5)
+
+    	hand.print()
+    	remainingCards.print()
+	} */
