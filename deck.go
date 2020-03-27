@@ -27,6 +27,10 @@ func (d deck) print() { // (d deck) here in the syntax is what we refer to as a 
 	}
 }
 
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize], d[handSize:]
+}
+
 // Notes:
 // 1. (d deck) within syntax... the d is the actual copy of the deck we're working with is available in the function as a variable called 'd'
 //    the deck there basically means every variable of type 'deck' can call this function on itself
