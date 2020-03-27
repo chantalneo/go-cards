@@ -6,6 +6,21 @@ import "fmt"
 // which is a slice of strings
 type deck []string // We're sorta saying type deck is kind of a slice or a subclass or kind of extends all the behavior of a slice of string. Note: extends some class are not terms that we actually use inside of Go
 
+func newDeck() deck {
+	cards := deck{}
+
+	cardSuits := []string{"Spades", "Hearts", "Clubs", "Diamonds"}
+	cardValues := []string{"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"}
+
+	for _, suit := range cardSuits {
+		for _, value := range cardValues {
+			cards = append(cards, value+" of "+suit)
+		}
+	}
+
+	return cards
+}
+
 func (d deck) print() { // (d deck) here in the syntax is what we refer to as a receiver. With this line of syntax, we basically allowed any variable of type "deck" the access to the "print" method. Further breakdown of the syntax is available at point 1 below
 	for i, card := range d {
 		fmt.Println(i, card)
@@ -46,3 +61,4 @@ func (d deck) print() { // (d deck) here in the syntax is what we refer to as a 
 	func (this laptopSize) getSizeOfLaptop() laptopSize {
     	return this
 	} */
+// 5. In the for loops, we replaced i and j with underscores to tell Go that we understand that there are variables there but we just don't care about it and we don't want to use it. Thus, getting rid of errors

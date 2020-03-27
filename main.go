@@ -1,20 +1,9 @@
 package main
 
 func main() {
-	// var card string = "Ace of Spades" // Breaking down of the syntax, check point 1 below
-	// card := "Ace of Spades" // This is the 100% equivalent of the code right above. Here we rely upon the compiler to infer that card is supposed to contain a string
-	// card = "Five of Diamonds" // Important note on point 3 below
-	cards := deck{"Ace of Diamonds", newCard()}
-	cards = append(cards, "Six of Spades") // append function does not modify the existing slice. Instead it returns a new slice that we then assign back to a variable of cards
+	cards := newDeck()
 
-	// for i, card := range cards { // Breaking down of the syntax, check point 6 below
-	// 	fmt.Println(i, card)
-	// }
 	cards.print()
-}
-
-func newCard() string { // Breaking down of the syntax, check point 4 below
-	return "Five of Diamonds"
 }
 
 // Notes:
@@ -23,6 +12,7 @@ func newCard() string { // Breaking down of the syntax, check point 4 below
 //    card is the name of the variable
 //    string tells go that only a "string" will ever be assigned to this variable. Go is a statically typed language. So whenever we define a variable we assign it a type
 //    "Ace of Spades" is basically the value assigned to this variable "card" using an equal sign
+//	  - card := "Ace of Spades" is the 100% equivalent of the code right above, but here we rely upon the compiler to infer that card is supposed to contain a string
 //
 // 2. Basic Go Types (this is not an exhaustive list of basic types by the way)
 //    Type    | Example
@@ -31,7 +21,7 @@ func newCard() string { // Breaking down of the syntax, check point 4 below
 //    int     | 0, -10000, 99999
 //    float64 | 10.000001, 0.00009, -100.003
 //
-// 3. Only use := syntax when you're defining a new variable. To resign a new value to in this case, our variable "card", simply use the following:
+// 3. Only use := syntax when you're defining a new variable. To resign a new value to in this case, our variable "card" following point 1, simply use the following:
 //    card = "Five of Diamonds"
 //
 // 4. func newCard() string {
