@@ -3,7 +3,8 @@ package main
 func main() {
 	// greeting := "Hi There!"
 	// fmt.Println([]byte(greeting))
-	cards := newDeckFromFile("my_cards")
+	cards := newDeck()
+	cards.shuffle()
 	cards.print()
 }
 
