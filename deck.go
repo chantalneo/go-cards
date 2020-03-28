@@ -6,6 +6,7 @@ import (
 	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 // Create a new type of 'deck'
@@ -63,8 +64,11 @@ func (d deck) shuffle() {
 	// for each index, card in cards
 	//    Generate a random number between 0 and len(cards)-1
 	//    Swap the current card and the card at cards[randomNumber]
+	source := rand.NewSource(time.Now().UnixNano())
+	r := rand.New(source)
+
 	for i := range d { // We do not need to always get a reference to the element that we are iterating over. So I'm not getting using i, card
-		newPosition := rand.Intn(len(d) - 1)
+		newPosition := r.Intn(len(d) - 1)
 
 		d[i], d[newPosition] = d[newPosition], d[i] // Fancy one-line swap right here. This is an expression to swap the elements at both i and new position inside of our slice
 	}
