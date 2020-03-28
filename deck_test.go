@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestNewDeck(t *testing.T) {
+func TestNewDeck(t *testing.T) { // Instructor will also address the asterisk at the core of next topic
 	d := newDeck()
 
 	if len(d) != 52 {
@@ -32,6 +32,7 @@ func TestSaveToDeckAndNewDeckFromFile(t *testing.T) {
 	if len(loadedDeck) != 52 {
 		t.Errorf("Expected 52 cards in deck, but got %v", len(loadedDeck))
 	}
+
 	os.Remove("_decktesting")
 }
 

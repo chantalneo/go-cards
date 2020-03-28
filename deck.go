@@ -34,7 +34,7 @@ func (d deck) print() { // (d deck) here in the syntax is what we refer to as a 
 	}
 }
 
-func deal(d deck, handSize int) (deck, deck) {
+func deal(d deck, handSize int) (deck, deck) { // The reason why we didn't choose to use a receiver here is because we'd then have e.g. cards.deal(5). It'd give the wrong idea that we're modifying the slice. Instructor will also address more reasons regarding this at the core of next topic
 	return d[:handSize], d[handSize:]
 }
 
