@@ -82,6 +82,12 @@ func (d deck) shuffle() {
 // 2. Byte slice is like an array where every element inside of it corresponds to an ASCII character code. String "Hi there!" would be [72 105 32 116 104 101 114 101 33] in byte slice
 //    To do conversion, we can refer to the Dec column of http://www.asciitable.com/
 //    - We can do type conversion in Go by writing something like: []byte("Hi There!"). []byte refers to the type we want and "Hi There!" is the value we have
+//
+// 3. Testing in Go isn't RSpec, mocha, jasmine, selenium, etc!
+//    - To make a test, create a new file ending in _test.go
+// 	    E.g. deck_test.go
+//    - To run all tests in a package, run the following command:
+//      go test
 
 // Quiz 5: Test Your Knowledge: Functions with Receivers
 // 1. What would the following code print out? "Harry Potter"
