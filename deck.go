@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"os"
 	"strings"
 )
 
@@ -41,6 +42,19 @@ func (d deck) toString() string {
 
 func (d deck) saveToFile(filename string) error {
 	return ioutil.WriteFile(filename, []byte(d.toString()), 0666) // 0666 is a very default permissions that basically means anyone can read and write this file
+}
+
+func newDeckFromFile(filename string) deck {
+	bs, err := ioutil.ReadFile(filename) // 'err' has a value of type 'error'. If nothing went wrong, it will have a value of 'nil', a.k.a. which essentially means no value in Go
+	if err != nil {
+		// Option #1 - log the error and return a call to newDeck()
+		// Option #2 - log the error and entirely quit the program
+		fmt.Println("Error:", err)
+		os.Exit(1) // 0 would mean success
+	}
+
+	s := strings.Split(string(bs), ",")
+	return deck(s)
 }
 
 // Notes:
